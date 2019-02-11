@@ -11,14 +11,26 @@ namespace Dealership
     Car bmw = new Car("2010 BMW", 10000, 50000);
     Car nissan = new Car("2018 Nissan", 30000, 30000);
 
-    List<Car> dealership = new List<Car>{};
+    List<Car> cars = new List<Car>() {lexus, ford, bmw, nissan};
 
+    Conlose.WriteLine("Enter max price:");
+    int maxPrice = int.Parse(Console.ReadLine());
 
-    dealership.Add(lexus);
-    dealership.Add(ford);
-    dealership.Add(bmw);
-    dealership.Add(nissan);
+    List<Car> affordableCars = new List<Car>(){};
+    foreach(car in cars)
+    {
+      if (car.WorthToBuy)
+      {
+        affordableCars.Add(car);
+      }
+    }
 
-
+    foreach(car in affordableCars)
+    {
+      Console.WriteLine("_____________________________");
+      Console.WriteLine(car.GetModel());
+      Conlose.WriteLine(car.GetPrice());
+      Conlose.WriteLine(car.GetMiles());
+    }
   }
 }
