@@ -17,11 +17,14 @@ namespace Dealership
       Console.WriteLine("Enter max price:");
       int maxPrice = int.Parse(Console.ReadLine());
 
+      Console.WriteLine("Enter max mileage:");
+      int maxMiles = int.Parse(Console.ReadLine());
+
       List<Car> affordableCars = new List<Car>(){};
 
       foreach(Car car in cars)
       {
-        if (car.WorthToBuy(maxPrice))
+        if (car.WorthToBuy(maxPrice, maxMiles))
         {
           affordableCars.Add(car);
         }

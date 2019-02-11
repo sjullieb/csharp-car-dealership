@@ -35,9 +35,9 @@ namespace Dealership
       return Miles;
     }
 
-    public bool WorthToBuy(int maxPrice)
+    public bool WorthToBuy(int maxPrice, int maxMiles)
     {
-      return (Price <= maxPrice);
+      return ((Price <= maxPrice) && (Miles <= maxMiles));
     }
 
   }
