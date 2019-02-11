@@ -8,14 +8,14 @@ namespace Dealership
     private int Price;
     private int Miles;
 
-    public void Car(string model, int price, int miles)
+    public Car(string model, int price, int miles)
     {
       Model = model;
       Price = price;
       Miles = miles;
     }
 
-    public SetPrice(int newPrice)
+    public void SetPrice(int newPrice)
     {
       Price = newPrice;
     }
