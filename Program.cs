@@ -18,6 +18,7 @@ namespace Dealership
       int maxPrice = int.Parse(Console.ReadLine());
 
       List<Car> affordableCars = new List<Car>(){};
+
       foreach(Car car in cars)
       {
         if (car.WorthToBuy(maxPrice))
@@ -26,12 +27,24 @@ namespace Dealership
         }
       }
 
-      foreach(Car car in affordableCars)
+      if (affordableCars.Count == 0)
       {
-        Console.WriteLine("_____________________________");
-        Console.WriteLine(car.GetModel());
-        Console.WriteLine("$" + car.GetPrice());
-        Console.WriteLine(car.GetMiles() + " miles");
+        Console.WriteLine("Sorry we don't have cars for this price or less.");
+        Console.WriteLine("Would you like to try another search? Y for yes, Enter for no");
+        if (Console.ReadLine().ToUpper() == "Y")
+        {
+          Main();
+        }
+      }
+      else
+      {
+        foreach(Car car in affordableCars)
+        {
+          Console.WriteLine("_____________________________");
+          Console.WriteLine(car.GetModel());
+          Console.WriteLine("$" + car.GetPrice());
+          Console.WriteLine(car.GetMiles() + " miles");
+        }
       }
     }
   }
